@@ -1,0 +1,982 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OneLogin API
+  description: OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA,
+    branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0
+    bearer tokens.
+  tags:
+  - Onelogin
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: onelogin
+    baseUri: https://api.onelogin.com
+    description: OneLogin API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{ONELOGIN_TOKEN}}'
+    resources:
+    - name: auth-oauth2-v2-token
+      path: /auth/oauth2/v2/token
+      operations:
+      - name: generatetoken
+        method: POST
+        description: Generate access token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: auth-oauth2-revoke
+      path: /auth/oauth2/revoke
+      operations:
+      - name: revoketoken
+        method: POST
+        description: Revoke access token
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users
+      path: /api/1/users
+      operations:
+      - name: listusers
+        method: GET
+        description: List users
+        inputParameters:
+        - name: limit
+          in: query
+          type: integer
+        - name: page
+          in: query
+          type: integer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createuser
+        method: POST
+        description: Create user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id
+      path: /api/1/users/{id}
+      operations:
+      - name: getuser
+        method: GET
+        description: Get user by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateuser
+        method: PUT
+        description: Update user by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteuser
+        method: DELETE
+        description: Delete user by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-apps
+      path: /api/1/users/{id}/apps
+      operations:
+      - name: getuserapps
+        method: GET
+        description: Get apps for a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-roles
+      path: /api/1/users/{id}/roles
+      operations:
+      - name: getuserroles
+        method: GET
+        description: Get roles for a user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: assignuserrole
+        method: POST
+        description: Assign role to user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-roles-role-id
+      path: /api/1/users/{id}/roles/{role_id}
+      operations:
+      - name: removeuserrole
+        method: DELETE
+        description: Remove role from user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-password
+      path: /api/1/users/{id}/password
+      operations:
+      - name: setuserpassword
+        method: PUT
+        description: Set user password
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-custom-attributes
+      path: /api/1/users/{id}/custom_attributes
+      operations:
+      - name: setusercustomattribute
+        method: PUT
+        description: Set custom attribute
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-state
+      path: /api/1/users/{id}/state
+      operations:
+      - name: setuserstate
+        method: PUT
+        description: Set user state
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-logout
+      path: /api/1/users/{id}/logout
+      operations:
+      - name: logoutuser
+        method: POST
+        description: Log user out
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-lock
+      path: /api/1/users/{id}/lock
+      operations:
+      - name: lockuser
+        method: POST
+        description: Lock user account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-roles
+      path: /api/1/roles
+      operations:
+      - name: getroles
+        method: GET
+        description: Get roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-2-roles
+      path: /api/2/roles
+      operations:
+      - name: listrolesv2
+        method: GET
+        description: List roles (v2)
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createrole
+        method: POST
+        description: Create role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-2-roles-id
+      path: /api/2/roles/{id}
+      operations:
+      - name: getrole
+        method: GET
+        description: Get role by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updaterole
+        method: PUT
+        description: Update role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleterole
+        method: DELETE
+        description: Delete role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-2-apps
+      path: /api/2/apps
+      operations:
+      - name: listapps
+        method: GET
+        description: List apps
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createapp
+        method: POST
+        description: Create app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-2-apps-id
+      path: /api/2/apps/{id}
+      operations:
+      - name: getapp
+        method: GET
+        description: Get app by ID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateapp
+        method: PUT
+        description: Update app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteapp
+        method: DELETE
+        description: Delete app
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-saml-assertion
+      path: /api/1/saml_assertion
+      operations:
+      - name: generatesamlassertion
+        method: POST
+        description: Generate SAML assertion
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-saml-assertion-verify-factor
+      path: /api/1/saml_assertion/verify_factor
+      operations:
+      - name: verifysamlfactor
+        method: POST
+        description: Verify factor for SAML
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: api-1-users-id-otp-devices
+      path: /api/1/users/{id}/otp_devices
+      operations:
+      - name: getotpdevices
+        method: GET
+        description: Get available auth factors
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: enrollfactor
+        method: POST
+        description: Enroll auth factor
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: onelogin-rest
+    description: REST adapter for OneLogin API.
+    resources:
+    - path: /auth/oauth2/v2/token
+      name: generatetoken
+      operations:
+      - method: POST
+        name: generatetoken
+        description: Generate access token
+        call: onelogin.generatetoken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /auth/oauth2/revoke
+      name: revoketoken
+      operations:
+      - method: POST
+        name: revoketoken
+        description: Revoke access token
+        call: onelogin.revoketoken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users
+      name: listusers
+      operations:
+      - method: GET
+        name: listusers
+        description: List users
+        call: onelogin.listusers
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users
+      name: createuser
+      operations:
+      - method: POST
+        name: createuser
+        description: Create user
+        call: onelogin.createuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}
+      name: getuser
+      operations:
+      - method: GET
+        name: getuser
+        description: Get user by ID
+        call: onelogin.getuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}
+      name: updateuser
+      operations:
+      - method: PUT
+        name: updateuser
+        description: Update user by ID
+        call: onelogin.updateuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}
+      name: deleteuser
+      operations:
+      - method: DELETE
+        name: deleteuser
+        description: Delete user by ID
+        call: onelogin.deleteuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/apps
+      name: getuserapps
+      operations:
+      - method: GET
+        name: getuserapps
+        description: Get apps for a user
+        call: onelogin.getuserapps
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/roles
+      name: getuserroles
+      operations:
+      - method: GET
+        name: getuserroles
+        description: Get roles for a user
+        call: onelogin.getuserroles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/roles
+      name: assignuserrole
+      operations:
+      - method: POST
+        name: assignuserrole
+        description: Assign role to user
+        call: onelogin.assignuserrole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/roles/{role_id}
+      name: removeuserrole
+      operations:
+      - method: DELETE
+        name: removeuserrole
+        description: Remove role from user
+        call: onelogin.removeuserrole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/password
+      name: setuserpassword
+      operations:
+      - method: PUT
+        name: setuserpassword
+        description: Set user password
+        call: onelogin.setuserpassword
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/custom_attributes
+      name: setusercustomattribute
+      operations:
+      - method: PUT
+        name: setusercustomattribute
+        description: Set custom attribute
+        call: onelogin.setusercustomattribute
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/state
+      name: setuserstate
+      operations:
+      - method: PUT
+        name: setuserstate
+        description: Set user state
+        call: onelogin.setuserstate
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/logout
+      name: logoutuser
+      operations:
+      - method: POST
+        name: logoutuser
+        description: Log user out
+        call: onelogin.logoutuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/lock
+      name: lockuser
+      operations:
+      - method: POST
+        name: lockuser
+        description: Lock user account
+        call: onelogin.lockuser
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/roles
+      name: getroles
+      operations:
+      - method: GET
+        name: getroles
+        description: Get roles
+        call: onelogin.getroles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/roles
+      name: listrolesv2
+      operations:
+      - method: GET
+        name: listrolesv2
+        description: List roles (v2)
+        call: onelogin.listrolesv2
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/roles
+      name: createrole
+      operations:
+      - method: POST
+        name: createrole
+        description: Create role
+        call: onelogin.createrole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/roles/{id}
+      name: getrole
+      operations:
+      - method: GET
+        name: getrole
+        description: Get role by ID
+        call: onelogin.getrole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/roles/{id}
+      name: updaterole
+      operations:
+      - method: PUT
+        name: updaterole
+        description: Update role
+        call: onelogin.updaterole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/roles/{id}
+      name: deleterole
+      operations:
+      - method: DELETE
+        name: deleterole
+        description: Delete role
+        call: onelogin.deleterole
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/apps
+      name: listapps
+      operations:
+      - method: GET
+        name: listapps
+        description: List apps
+        call: onelogin.listapps
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/apps
+      name: createapp
+      operations:
+      - method: POST
+        name: createapp
+        description: Create app
+        call: onelogin.createapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/apps/{id}
+      name: getapp
+      operations:
+      - method: GET
+        name: getapp
+        description: Get app by ID
+        call: onelogin.getapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/apps/{id}
+      name: updateapp
+      operations:
+      - method: PUT
+        name: updateapp
+        description: Update app
+        call: onelogin.updateapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/2/apps/{id}
+      name: deleteapp
+      operations:
+      - method: DELETE
+        name: deleteapp
+        description: Delete app
+        call: onelogin.deleteapp
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/saml_assertion
+      name: generatesamlassertion
+      operations:
+      - method: POST
+        name: generatesamlassertion
+        description: Generate SAML assertion
+        call: onelogin.generatesamlassertion
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/saml_assertion/verify_factor
+      name: verifysamlfactor
+      operations:
+      - method: POST
+        name: verifysamlfactor
+        description: Verify factor for SAML
+        call: onelogin.verifysamlfactor
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/otp_devices
+      name: getotpdevices
+      operations:
+      - method: GET
+        name: getotpdevices
+        description: Get available auth factors
+        call: onelogin.getotpdevices
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /api/1/users/{id}/otp_devices
+      name: enrollfactor
+      operations:
+      - method: POST
+        name: enrollfactor
+        description: Enroll auth factor
+        call: onelogin.enrollfactor
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: onelogin-mcp
+    transport: http
+    description: MCP adapter for OneLogin API for AI agent use.
+    tools:
+    - name: generatetoken
+      description: Generate access token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.generatetoken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: revoketoken
+      description: Revoke access token
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.revoketoken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listusers
+      description: List users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.listusers
+      with:
+        limit: tools.limit
+        page: tools.page
+      inputParameters:
+      - name: limit
+        type: integer
+        description: limit
+      - name: page
+        type: integer
+        description: page
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createuser
+      description: Create user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.createuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getuser
+      description: Get user by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateuser
+      description: Update user by ID
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: onelogin.updateuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteuser
+      description: Delete user by ID
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: onelogin.deleteuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getuserapps
+      description: Get apps for a user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getuserapps
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getuserroles
+      description: Get roles for a user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getuserroles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: assignuserrole
+      description: Assign role to user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.assignuserrole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: removeuserrole
+      description: Remove role from user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: onelogin.removeuserrole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: setuserpassword
+      description: Set user password
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: onelogin.setuserpassword
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: setusercustomattribute
+      description: Set custom attribute
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: onelogin.setusercustomattribute
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: setuserstate
+      description: Set user state
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: onelogin.setuserstate
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: logoutuser
+      description: Log user out
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.logoutuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: lockuser
+      description: Lock user account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.lockuser
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getroles
+      description: Get roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getroles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listrolesv2
+      description: List roles (v2)
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.listrolesv2
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createrole
+      description: Create role
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.createrole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrole
+      description: Get role by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getrole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updaterole
+      description: Update role
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: onelogin.updaterole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleterole
+      description: Delete role
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: onelogin.deleterole
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listapps
+      description: List apps
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.listapps
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createapp
+      description: Create app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.createapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getapp
+      description: Get app by ID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateapp
+      description: Update app
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: onelogin.updateapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteapp
+      description: Delete app
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: onelogin.deleteapp
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: generatesamlassertion
+      description: Generate SAML assertion
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.generatesamlassertion
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: verifysamlfactor
+      description: Verify factor for SAML
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.verifysamlfactor
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getotpdevices
+      description: Get available auth factors
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: onelogin.getotpdevices
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: enrollfactor
+      description: Enroll auth factor
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: onelogin.enrollfactor
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    ONELOGIN_TOKEN: ONELOGIN_TOKEN
