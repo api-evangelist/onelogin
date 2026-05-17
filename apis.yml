@@ -46,7 +46,7 @@ apis:
         url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/openapi/onelogin-openapi.yml
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
       - type: Authentication
         url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
