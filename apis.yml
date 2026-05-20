@@ -8,63 +8,65 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Identity
-- Access Management
-- Single Sign-On
-- Multi-Factor Authentication
-- SAML
-- OAuth
+  - Identity
+  - Access Management
+  - Single Sign-On
+  - Multi-Factor Authentication
+  - SAML
+  - OAuth
 created: '2025-01-08'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: onelogin:onelogin
-  name: OneLogin API
-  description: OneLogin REST API for identity and access management. The API follows RESTful principles, is secured by OAuth
-    2.0, and provides JSON messages with search, pagination, sorting, and filtering. Resources include Users, Roles, Apps,
-    App Rules, Branding, Connectors, MFA, Reports, SAML Assertions, Smart Hooks, Smart MFA, User Mappings, Self- Registration,
-    and Vigilance AI.
-  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
-  baseURL: https://<subdomain>.onelogin.com
-  tags:
-  - Identity
-  - Access Management
-  - Users
-  - Roles
-  - Apps
-  - SAML
-  - OAuth
-  properties:
-  - type: Documentation
-    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
-  - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/openapi/onelogin-openapi.yml
-  - type: GettingStarted
-    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
-  - type: Authentication
-    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
-  - type: NaftikoCapability
-    url: capabilities/onelogin-apps.yaml
-  - type: NaftikoCapability
-    url: capabilities/onelogin-mfa.yaml
-  - type: NaftikoCapability
-    url: capabilities/onelogin-oauth.yaml
-  - type: NaftikoCapability
-    url: capabilities/onelogin-roles.yaml
-  - type: NaftikoCapability
-    url: capabilities/onelogin-saml.yaml
-  - type: NaftikoCapability
-    url: capabilities/onelogin-users.yaml
+  - aid: onelogin:onelogin
+    name: OneLogin API
+    description: OneLogin REST API for identity and access management. The API follows RESTful principles, is secured by OAuth
+      2.0, and provides JSON messages with search, pagination, sorting, and filtering. Resources include Users, Roles, Apps,
+      App Rules, Branding, Connectors, MFA, Reports, SAML Assertions, Smart Hooks, Smart MFA, User Mappings, Self- Registration,
+      and Vigilance AI.
+    humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+    baseURL: https://<subdomain>.onelogin.com
+    tags:
+    - Identity
+    - Access Management
+    - Users
+    - Roles
+    - Apps
+    - SAML
+    - OAuth
+    properties:
+    - type: Documentation
+      url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+    - type: OpenAPI
+      url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/openapi/onelogin-openapi.yml
+    - type: GettingStarted
+      url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+    - type: Authentication
+      url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+    - type: NaftikoCapability
+      url: capabilities/onelogin-apps.yaml
+    - type: NaftikoCapability
+      url: capabilities/onelogin-mfa.yaml
+    - type: NaftikoCapability
+      url: capabilities/onelogin-oauth.yaml
+    - type: NaftikoCapability
+      url: capabilities/onelogin-roles.yaml
+    - type: NaftikoCapability
+      url: capabilities/onelogin-saml.yaml
+    - type: NaftikoCapability
+      url: capabilities/onelogin-users.yaml
 common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/onelogin
-- type: Website
-  url: https://www.onelogin.com
-- type: Documentation
-  url: https://developers.onelogin.com
-- type: Developer Portal
-  url: https://developers.onelogin.com
+  - type: GitHubOrganization
+    url: https://github.com/onelogin
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/onelogin
+  - type: Website
+    url: https://www.onelogin.com
+  - type: Documentation
+    url: https://developers.onelogin.com
+  - type: Developer Portal
+    url: https://developers.onelogin.com
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
