@@ -55,7 +55,7 @@ common:
     url: https://www.onelogin.com
   - type: Documentation
     url: https://developers.onelogin.com
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://developers.onelogin.com
 maintainers:
   - FN: Kin Lane
