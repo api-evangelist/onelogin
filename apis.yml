@@ -47,6 +47,10 @@ apis:
       - type: Authentication
         url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
 common:
+  - type: DomainSecurity
+    url: security/onelogin-domain-security.yml
+  - type: Authentication
+    url: authentication/onelogin-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/onelogin
   - type: LinkedIn
@@ -57,6 +61,8 @@ common:
     url: https://developers.onelogin.com
   - type: DeveloperPortal
     url: https://developers.onelogin.com
+  - type: Blog
+    url: https://www.onelogin.com/blog/feed
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
