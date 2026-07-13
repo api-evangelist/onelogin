@@ -1,0 +1,21 @@
+{
+  "repo": "onelogin",
+  "feeds": [
+    {
+      "source": "https://www.onelogin.com/blog/feed",
+      "feed_url": "https://www.onelogin.com/blog/feed",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://developers.onelogin.com",
+      "feed_url": "https://developers.onelogin.com",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "fetched": "2026-07-11T11:50:51Z",
+  "post_count": 17
+}
