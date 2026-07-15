@@ -47,6 +47,8 @@ apis:
       - type: Authentication
         url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
 common:
+  - type: AgenticAccess
+    url: agentic-access/onelogin-agentic-access.yml
   - type: DomainSecurity
     url: security/onelogin-domain-security.yml
   - type: Authentication
