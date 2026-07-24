@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: OneLogin Apps API
+  description: OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA, branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0 bearer tokens.
+  version: '1.0'
+  contact:
+    name: OneLogin Developers
+    url: https://developers.onelogin.com
+  license:
+    name: OneLogin Terms of Service
+    url: https://www.onelogin.com/legal/terms
+servers:
+- url: https://{subdomain}.onelogin.com
+  description: OneLogin tenant subdomain
+  variables:
+    subdomain:
+      default: api
+      description: Your OneLogin subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Apps
+  description: Application management
+paths:
+  /api/2/apps:
+    get:
+      tags:
+      - Apps
+      summary: List apps
+      operationId: listApps
+      responses:
+        '200':
+          description: List of apps
+    post:
+      tags:
+      - Apps
+      summary: Create app
+      operationId: createApp
+      responses:
+        '201':
+          description: App created
+  /api/2/apps/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      tags:
+      - Apps
+      summary: Get app by ID
+      operationId: getApp
+      responses:
+        '200':
+          description: App details
+    put:
+      tags:
+      - Apps
+      summary: Update app
+      operationId: updateApp
+      responses:
+        '200':
+          description: App updated
+    delete:
+      tags:
+      - Apps
+      summary: Delete app
+      operationId: deleteApp
+      responses:
+        '204':
+          description: App deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: OneLogin Apps Roles API
+  description: OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA, branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0 bearer tokens.
+  version: '1.0'
+  contact:
+    name: OneLogin Developers
+    url: https://developers.onelogin.com
+  license:
+    name: OneLogin Terms of Service
+    url: https://www.onelogin.com/legal/terms
+servers:
+- url: https://{subdomain}.onelogin.com
+  description: OneLogin tenant subdomain
+  variables:
+    subdomain:
+      default: api
+      description: Your OneLogin subdomain
+security:
+- bearerAuth: []
+tags:
+- name: Roles
+  description: Role management
+paths:
+  /api/1/roles:
+    get:
+      tags:
+      - Roles
+      summary: Get roles
+      operationId: getRoles
+      responses:
+        '200':
+          description: List of roles
+  /api/2/roles:
+    get:
+      tags:
+      - Roles
+      summary: List roles (v2)
+      operationId: listRolesV2
+      responses:
+        '200':
+          description: List of roles
+    post:
+      tags:
+      - Roles
+      summary: Create role
+      operationId: createRole
+      responses:
+        '201':
+          description: Role created
+  /api/2/roles/{id}:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      tags:
+      - Roles
+      summary: Get role by ID
+      operationId: getRole
+      responses:
+        '200':
+          description: Role details
+    put:
+      tags:
+      - Roles
+      summary: Update role
+      operationId: updateRole
+      responses:
+        '200':
+          description: Role updated
+    delete:
+      tags:
+      - Roles
+      summary: Delete role
+      operationId: deleteRole
+      responses:
+        '204':
+          description: Role deleted
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

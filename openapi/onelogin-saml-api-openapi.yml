@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: OneLogin Apps SAML API
+  description: OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA, branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0 bearer tokens.
+  version: '1.0'
+  contact:
+    name: OneLogin Developers
+    url: https://developers.onelogin.com
+  license:
+    name: OneLogin Terms of Service
+    url: https://www.onelogin.com/legal/terms
+servers:
+- url: https://{subdomain}.onelogin.com
+  description: OneLogin tenant subdomain
+  variables:
+    subdomain:
+      default: api
+      description: Your OneLogin subdomain
+security:
+- bearerAuth: []
+tags:
+- name: SAML
+  description: SAML assertion generation
+paths:
+  /api/1/saml_assertion:
+    post:
+      tags:
+      - SAML
+      summary: Generate SAML assertion
+      operationId: generateSamlAssertion
+      responses:
+        '200':
+          description: SAML assertion generated
+  /api/1/saml_assertion/verify_factor:
+    post:
+      tags:
+      - SAML
+      summary: Verify factor for SAML
+      operationId: verifySamlFactor
+      responses:
+        '200':
+          description: Factor verified
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

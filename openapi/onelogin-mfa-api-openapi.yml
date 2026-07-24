@@ -1,0 +1,53 @@
+openapi: 3.0.3
+info:
+  title: OneLogin Apps MFA API
+  description: OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA, branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0 bearer tokens.
+  version: '1.0'
+  contact:
+    name: OneLogin Developers
+    url: https://developers.onelogin.com
+  license:
+    name: OneLogin Terms of Service
+    url: https://www.onelogin.com/legal/terms
+servers:
+- url: https://{subdomain}.onelogin.com
+  description: OneLogin tenant subdomain
+  variables:
+    subdomain:
+      default: api
+      description: Your OneLogin subdomain
+security:
+- bearerAuth: []
+tags:
+- name: MFA
+  description: Multi-Factor Authentication
+paths:
+  /api/1/users/{id}/otp_devices:
+    parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+    get:
+      tags:
+      - MFA
+      summary: Get available auth factors
+      operationId: getOtpDevices
+      responses:
+        '200':
+          description: Available factors
+    post:
+      tags:
+      - MFA
+      summary: Enroll auth factor
+      operationId: enrollFactor
+      responses:
+        '200':
+          description: Factor enrolled
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
