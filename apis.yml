@@ -5,9 +5,22 @@ description: >-
   user provisioning, and a RESTful API for managing users, roles, applications, MFA, branding, connectors, reports, SAML
   assertions, smart hooks, and Vigilance AI.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onelogin.png
 tags:
   - Identity
   - Access Management
@@ -20,32 +33,102 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: onelogin:onelogin
-    name: OneLogin API
-    description: >-
-      OneLogin REST API for identity and access management. The API follows RESTful principles, is secured by OAuth 2.0,
-      and provides JSON messages with search, pagination, sorting, and filtering. Resources include Users, Roles, Apps,
-      App Rules, Branding, Connectors, MFA, Reports, SAML Assertions, Smart Hooks, Smart MFA, User Mappings, Self-
-      Registration, and Vigilance AI.
-    humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
-    baseURL: https://<subdomain>.onelogin.com
-    tags:
-      - Identity
-      - Access Management
-      - Users
-      - Roles
-      - Apps
-      - SAML
-      - OAuth
-    properties:
-      - type: Documentation
-        url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/openapi/onelogin-openapi.yml
-      - type: GettingStarted
-        url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
-      - type: Authentication
-        url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-apps-api
+  name: OneLogin Apps API
+  description: Application management
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - Apps
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-apps-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-mfa-api
+  name: OneLogin MFA API
+  description: Multi-Factor Authentication
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - MFA
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-mfa-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-oauth-api
+  name: OneLogin OAuth API
+  description: OAuth 2.0 token generation and revocation
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-roles-api
+  name: OneLogin Roles API
+  description: Role management
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-roles-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-saml-api
+  name: OneLogin SAML API
+  description: SAML assertion generation
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - SAML
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-saml-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-users-api
+  name: OneLogin Users API
+  description: User management
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-users-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
 common:
   - type: AgenticAccess
     url: agentic-access/onelogin-agentic-access.yml
