@@ -1,0 +1,475 @@
+openapi: 3.0.3
+info:
+  title: OneLogin API
+  description: >-
+    OneLogin REST API for identity and access management. Provides programmatic
+    access to users, roles, apps, MFA, branding, connectors, reports, SAML
+    assertions, smart hooks, and Vigilance AI. Authentication is handled via
+    OAuth 2.0 bearer tokens.
+  version: '1.0'
+  contact:
+    name: OneLogin Developers
+    url: https://developers.onelogin.com
+  license:
+    name: OneLogin Terms of Service
+    url: https://www.onelogin.com/legal/terms
+servers:
+  - url: https://{subdomain}.onelogin.com
+    description: OneLogin tenant subdomain
+    variables:
+      subdomain:
+        default: api
+        description: Your OneLogin subdomain
+security:
+  - bearerAuth: []
+tags:
+  - name: OAuth
+    description: OAuth 2.0 token generation and revocation
+  - name: Users
+    description: User management
+  - name: Roles
+    description: Role management
+  - name: Apps
+    description: Application management
+  - name: MFA
+    description: Multi-Factor Authentication
+  - name: SAML
+    description: SAML assertion generation
+paths:
+  /auth/oauth2/v2/token:
+    post:
+      tags:
+        - OAuth
+      summary: Generate access token
+      description: Generate an OAuth 2.0 bearer token using client credentials.
+      operationId: generateToken
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                grant_type:
+                  type: string
+                  example: client_credentials
+      responses:
+        '200':
+          description: Access token returned
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+                  expires_in:
+                    type: integer
+  /auth/oauth2/revoke:
+    post:
+      tags:
+        - OAuth
+      summary: Revoke access token
+      operationId: revokeToken
+      responses:
+        '200':
+          description: Token revoked
+  /api/1/users:
+    get:
+      tags:
+        - Users
+      summary: List users
+      operationId: listUsers
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: List of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      tags:
+        - Users
+      summary: Create user
+      operationId: createUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created
+  /api/1/users/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - Users
+      summary: Get user by ID
+      operationId: getUser
+      responses:
+        '200':
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      tags:
+        - Users
+      summary: Update user by ID
+      operationId: updateUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: User updated
+    delete:
+      tags:
+        - Users
+      summary: Delete user by ID
+      operationId: deleteUser
+      responses:
+        '204':
+          description: User deleted
+  /api/1/users/{id}/apps:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - Users
+      summary: Get apps for a user
+      operationId: getUserApps
+      responses:
+        '200':
+          description: Apps assigned to user
+  /api/1/users/{id}/roles:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - Users
+      summary: Get roles for a user
+      operationId: getUserRoles
+      responses:
+        '200':
+          description: Roles assigned to user
+    post:
+      tags:
+        - Users
+      summary: Assign role to user
+      operationId: assignUserRole
+      responses:
+        '200':
+          description: Role assigned
+  /api/1/users/{id}/roles/{role_id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: role_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    delete:
+      tags:
+        - Users
+      summary: Remove role from user
+      operationId: removeUserRole
+      responses:
+        '204':
+          description: Role removed
+  /api/1/users/{id}/password:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    put:
+      tags:
+        - Users
+      summary: Set user password
+      operationId: setUserPassword
+      responses:
+        '200':
+          description: Password set
+  /api/1/users/{id}/custom_attributes:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    put:
+      tags:
+        - Users
+      summary: Set custom attribute
+      operationId: setUserCustomAttribute
+      responses:
+        '200':
+          description: Custom attribute set
+  /api/1/users/{id}/state:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    put:
+      tags:
+        - Users
+      summary: Set user state
+      operationId: setUserState
+      responses:
+        '200':
+          description: State updated
+  /api/1/users/{id}/logout:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    post:
+      tags:
+        - Users
+      summary: Log user out
+      operationId: logoutUser
+      responses:
+        '200':
+          description: User logged out
+  /api/1/users/{id}/lock:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    post:
+      tags:
+        - Users
+      summary: Lock user account
+      operationId: lockUser
+      responses:
+        '200':
+          description: Account locked
+  /api/1/roles:
+    get:
+      tags:
+        - Roles
+      summary: Get roles
+      operationId: getRoles
+      responses:
+        '200':
+          description: List of roles
+  /api/2/roles:
+    get:
+      tags:
+        - Roles
+      summary: List roles (v2)
+      operationId: listRolesV2
+      responses:
+        '200':
+          description: List of roles
+    post:
+      tags:
+        - Roles
+      summary: Create role
+      operationId: createRole
+      responses:
+        '201':
+          description: Role created
+  /api/2/roles/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - Roles
+      summary: Get role by ID
+      operationId: getRole
+      responses:
+        '200':
+          description: Role details
+    put:
+      tags:
+        - Roles
+      summary: Update role
+      operationId: updateRole
+      responses:
+        '200':
+          description: Role updated
+    delete:
+      tags:
+        - Roles
+      summary: Delete role
+      operationId: deleteRole
+      responses:
+        '204':
+          description: Role deleted
+  /api/2/apps:
+    get:
+      tags:
+        - Apps
+      summary: List apps
+      operationId: listApps
+      responses:
+        '200':
+          description: List of apps
+    post:
+      tags:
+        - Apps
+      summary: Create app
+      operationId: createApp
+      responses:
+        '201':
+          description: App created
+  /api/2/apps/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - Apps
+      summary: Get app by ID
+      operationId: getApp
+      responses:
+        '200':
+          description: App details
+    put:
+      tags:
+        - Apps
+      summary: Update app
+      operationId: updateApp
+      responses:
+        '200':
+          description: App updated
+    delete:
+      tags:
+        - Apps
+      summary: Delete app
+      operationId: deleteApp
+      responses:
+        '204':
+          description: App deleted
+  /api/1/saml_assertion:
+    post:
+      tags:
+        - SAML
+      summary: Generate SAML assertion
+      operationId: generateSamlAssertion
+      responses:
+        '200':
+          description: SAML assertion generated
+  /api/1/saml_assertion/verify_factor:
+    post:
+      tags:
+        - SAML
+      summary: Verify factor for SAML
+      operationId: verifySamlFactor
+      responses:
+        '200':
+          description: Factor verified
+  /api/1/users/{id}/otp_devices:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      tags:
+        - MFA
+      summary: Get available auth factors
+      operationId: getOtpDevices
+      responses:
+        '200':
+          description: Available factors
+    post:
+      tags:
+        - MFA
+      summary: Enroll auth factor
+      operationId: enrollFactor
+      responses:
+        '200':
+          description: Factor enrolled
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        username:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+        title:
+          type: string
+        department:
+          type: string
+        company:
+          type: string
+        phone:
+          type: string
+        status:
+          type: integer
+        state:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string
+          format: date-time

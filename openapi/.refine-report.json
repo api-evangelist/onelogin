@@ -1,0 +1,24 @@
+{
+  "provider": "onelogin",
+  "sources": [
+    "onelogin-apps-api-openapi.yml",
+    "onelogin-mfa-api-openapi.yml",
+    "onelogin-oauth-api-openapi.yml",
+    "onelogin-roles-api-openapi.yml",
+    "onelogin-saml-api-openapi.yml",
+    "onelogin-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "onelogin-apps-api-openapi.yml",
+    "onelogin-mfa-api-openapi.yml",
+    "onelogin-oauth-api-openapi.yml",
+    "onelogin-roles-api-openapi.yml",
+    "onelogin-saml-api-openapi.yml",
+    "onelogin-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
