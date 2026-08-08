@@ -6,7 +6,7 @@
       "feed_url": "https://www.onelogin.com/blog/feed",
       "title": "",
       "saved": 0,
-      "method": "none"
+      "method": "feed"
     },
     {
       "source": "https://developers.onelogin.com",
@@ -16,6 +16,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-08-01T15:49:00Z",
+  "fetched": "2026-08-06T14:08:46Z",
   "post_count": 17
 }
