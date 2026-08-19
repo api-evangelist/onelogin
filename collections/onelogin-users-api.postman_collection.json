@@ -1,0 +1,1524 @@
+{
+  "item": [
+    {
+      "id": "3e4c951d-da0b-41c2-baba-746d0c835791",
+      "name": "Users",
+      "description": {
+        "content": "User management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fbeb1ddf-8edf-469d-84db-370a29d04bdd",
+          "name": "List users",
+          "request": {
+            "name": "List users",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b0af6bb-029e-4a4f-a5fc-3157fee6e75a",
+              "name": "List of users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8458,\n    \"email\": \"string\",\n    \"username\": \"string\",\n    \"firstname\": \"string\",\n    \"lastname\": \"string\",\n    \"title\": \"string\",\n    \"department\": \"string\",\n    \"company\": \"string\",\n    \"phone\": \"string\",\n    \"status\": 3978,\n    \"state\": 7009,\n    \"created_at\": \"1987-07-10T10:16:28.247Z\",\n    \"updated_at\": \"1963-01-10T14:48:58.513Z\"\n  },\n  {\n    \"id\": 1275,\n    \"email\": \"string\",\n    \"username\": \"string\",\n    \"firstname\": \"string\",\n    \"lastname\": \"string\",\n    \"title\": \"string\",\n    \"department\": \"string\",\n    \"company\": \"string\",\n    \"phone\": \"string\",\n    \"status\": 2059,\n    \"state\": 8871,\n    \"created_at\": \"1969-04-29T18:00:28.122Z\",\n    \"updated_at\": \"1963-07-02T09:49:23.450Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4c3467a9-2e8b-45c2-a9da-04a847228664",
+          "name": "Create user",
+          "request": {
+            "name": "Create user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"username\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"title\": \"<string>\",\n  \"department\": \"<string>\",\n  \"company\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"state\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "73e77d46-c38f-4a3a-b177-47b3a1a654e7",
+              "name": "User created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"username\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"title\": \"<string>\",\n  \"department\": \"<string>\",\n  \"company\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"state\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "015cb712-e9e6-447c-b47d-881fe28e746a",
+          "name": "Get user by ID",
+          "request": {
+            "name": "Get user by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9efecc8-8c76-4df0-998f-6bef099155a3",
+              "name": "User details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"username\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"title\": \"<string>\",\n  \"department\": \"<string>\",\n  \"company\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"state\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb36389c-d1cc-4c34-8134-16f9472bfca5",
+          "name": "Update user by ID",
+          "request": {
+            "name": "Update user by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"username\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"title\": \"<string>\",\n  \"department\": \"<string>\",\n  \"company\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"state\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e883a38-9725-4fc9-982a-757ebdb65de4",
+              "name": "User updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"username\": \"<string>\",\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"title\": \"<string>\",\n  \"department\": \"<string>\",\n  \"company\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"state\": \"<integer>\",\n  \"created_at\": \"<dateTime>\",\n  \"updated_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e5135ef-6a63-491a-9a9a-be347fdc74b0",
+          "name": "Delete user by ID",
+          "request": {
+            "name": "Delete user by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c3bb7b3c-277b-4698-a0f6-91b3482e9d80",
+              "name": "User deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0780c077-2acb-4f8a-9eb2-57d11e30450b",
+          "name": "Get apps for a user",
+          "request": {
+            "name": "Get apps for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "apps"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "227b2404-9439-410b-af95-7d0ac81a79eb",
+              "name": "Apps assigned to user",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "apps"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ae9c662-33ce-4d6f-8c5c-2dd2c04a275c",
+          "name": "Get roles for a user",
+          "request": {
+            "name": "Get roles for a user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5e25eb3-efb5-4519-ba43-b148179918ee",
+              "name": "Roles assigned to user",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "882c2f32-cd85-4bd4-9310-acfebad0be28",
+          "name": "Assign role to user",
+          "request": {
+            "name": "Assign role to user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5830587b-2998-420c-a791-2c80f8cc5989",
+              "name": "Role assigned",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ccd3eb25-b0b6-49cd-81c2-c525006c3c7c",
+          "name": "Remove role from user",
+          "request": {
+            "name": "Remove role from user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "roles",
+                ":role_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "role_id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ce8d61b-c4db-45c6-9f9c-062d090c02d1",
+              "name": "Role removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "roles",
+                    ":role_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "role_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13555188-ac3a-406e-b2bd-dc0e0ccba56b",
+          "name": "Set user password",
+          "request": {
+            "name": "Set user password",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "password"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8daef203-6406-41ce-a611-d7cd2958d2de",
+              "name": "Password set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6075a1a8-7010-401e-af08-daab27e71b27",
+          "name": "Set custom attribute",
+          "request": {
+            "name": "Set custom attribute",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "custom_attributes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "65dd83c2-197c-4f65-88ff-9f5fecf62b59",
+              "name": "Custom attribute set",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "custom_attributes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "337b7239-6737-44ff-959a-be1421bbc572",
+          "name": "Set user state",
+          "request": {
+            "name": "Set user state",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "state"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "883c189c-b63b-46c7-acd8-6580a1ed12c6",
+              "name": "State updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "state"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63ca5ebe-bbb1-4b26-8424-ae58e9058115",
+          "name": "Log user out",
+          "request": {
+            "name": "Log user out",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "logout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9623dfba-e33f-4aa9-bddf-8fd5b896d73f",
+              "name": "User logged out",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "logout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ee4e37e8-c824-4305-9e78-1e7c063b9639",
+          "name": "Lock user account",
+          "request": {
+            "name": "Lock user account",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "users",
+                ":id",
+                "lock"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43443bcc-edff-4480-a08e-abd63f5a2a36",
+              "name": "Account locked",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "users",
+                    ":id",
+                    "lock"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your OneLogin subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "api",
+      "key": "subdomain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{subdomain}}.onelogin.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ea354cf6-066a-497b-b214-95a5efa98dea",
+    "name": "OneLogin Apps Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA, branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0 bearer tokens.\n\nContact Support:\n Name: OneLogin Developers",
+      "type": "text/plain"
+    }
+  }
+}

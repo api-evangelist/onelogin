@@ -1,0 +1,287 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneLogin Apps Users API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/1/users",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Create user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create user"
+        },
+        {
+          "info": {
+            "name": "Get user by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get user by ID"
+        },
+        {
+          "info": {
+            "name": "Update user by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update user by ID"
+        },
+        {
+          "info": {
+            "name": "Delete user by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete user by ID"
+        },
+        {
+          "info": {
+            "name": "Get apps for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/apps",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get apps for a user"
+        },
+        {
+          "info": {
+            "name": "Get roles for a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/roles",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get roles for a user"
+        },
+        {
+          "info": {
+            "name": "Assign role to user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/roles",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Assign role to user"
+        },
+        {
+          "info": {
+            "name": "Remove role from user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/roles/:role_id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "role_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove role from user"
+        },
+        {
+          "info": {
+            "name": "Set user password",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/password",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Set user password"
+        },
+        {
+          "info": {
+            "name": "Set custom attribute",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/custom_attributes",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Set custom attribute"
+        },
+        {
+          "info": {
+            "name": "Set user state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/state",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Set user state"
+        },
+        {
+          "info": {
+            "name": "Log user out",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/logout",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Log user out"
+        },
+        {
+          "info": {
+            "name": "Lock user account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/lock",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lock user account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

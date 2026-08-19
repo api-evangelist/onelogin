@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneLogin Apps OAuth API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OAuth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/auth/oauth2/v2/token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generate an OAuth 2.0 bearer token using client credentials."
+        },
+        {
+          "info": {
+            "name": "Revoke access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/auth/oauth2/revoke"
+          },
+          "docs": "Revoke access token"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

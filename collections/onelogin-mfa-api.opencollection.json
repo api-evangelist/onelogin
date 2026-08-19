@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneLogin Apps MFA API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MFA",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get available auth factors",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/otp_devices",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get available auth factors"
+        },
+        {
+          "info": {
+            "name": "Enroll auth factor",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/users/:id/otp_devices",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Enroll auth factor"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

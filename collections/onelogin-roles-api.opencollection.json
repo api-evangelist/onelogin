@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneLogin Apps Roles API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Roles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/1/roles"
+          },
+          "docs": "Get roles"
+        },
+        {
+          "info": {
+            "name": "List roles (v2)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/2/roles"
+          },
+          "docs": "List roles (v2)"
+        },
+        {
+          "info": {
+            "name": "Create role",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/2/roles"
+          },
+          "docs": "Create role"
+        },
+        {
+          "info": {
+            "name": "Get role by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.onelogin.com/api/2/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get role by ID"
+        },
+        {
+          "info": {
+            "name": "Update role",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{subdomain}.onelogin.com/api/2/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update role"
+        },
+        {
+          "info": {
+            "name": "Delete role",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{subdomain}.onelogin.com/api/2/roles/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete role"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

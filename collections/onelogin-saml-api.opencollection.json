@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OneLogin Apps SAML API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SAML",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate SAML assertion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/saml_assertion"
+          },
+          "docs": "Generate SAML assertion"
+        },
+        {
+          "info": {
+            "name": "Verify factor for SAML",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{subdomain}.onelogin.com/api/1/saml_assertion/verify_factor"
+          },
+          "docs": "Verify factor for SAML"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

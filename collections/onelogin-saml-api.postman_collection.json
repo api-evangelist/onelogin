@@ -1,0 +1,218 @@
+{
+  "item": [
+    {
+      "id": "66e20215-733a-4b3d-8a8d-0d5906428c20",
+      "name": "SAML",
+      "description": {
+        "content": "SAML assertion generation",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0c2139da-fec7-4e34-b00f-98330ffa6c67",
+          "name": "Generate SAML assertion",
+          "request": {
+            "name": "Generate SAML assertion",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "saml_assertion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "55ec78f9-7d13-4b22-9616-73065349b2c6",
+              "name": "SAML assertion generated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "saml_assertion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a3b0459-1c7b-4b63-af16-c9602fab8343",
+          "name": "Verify factor for SAML",
+          "request": {
+            "name": "Verify factor for SAML",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "1",
+                "saml_assertion",
+                "verify_factor"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your OneLogin subdomain",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a000671-c2e3-43dd-95ec-9677f9e806b8",
+              "name": "Factor verified",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "1",
+                    "saml_assertion",
+                    "verify_factor"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your OneLogin subdomain",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your OneLogin subdomain",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "api",
+      "key": "subdomain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{subdomain}}.onelogin.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "66ed407f-e3d1-4922-9a54-3deb7a9f21b1",
+    "name": "OneLogin Apps SAML API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OneLogin REST API for identity and access management. Provides programmatic access to users, roles, apps, MFA, branding, connectors, reports, SAML assertions, smart hooks, and Vigilance AI. Authentication is handled via OAuth 2.0 bearer tokens.\n\nContact Support:\n Name: OneLogin Developers",
+      "type": "text/plain"
+    }
+  }
+}
