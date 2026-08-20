@@ -27,6 +27,13 @@ tags:
   - Single Sign-On
   - Multi-Factor Authentication
   - SAML
+  - Authentication
+tags_raw:
+  - Identity
+  - Access Management
+  - Single Sign-On
+  - Multi-Factor Authentication
+  - SAML
   - OAuth
 created: '2025-01-08'
 modified: '2026-05-19'
@@ -39,6 +46,8 @@ apis:
   humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
   baseURL: https://<subdomain>.onelogin.com
   tags:
+  - Application
+  tags_raw:
   - Apps
   properties:
   - type: OpenAPI
@@ -71,6 +80,8 @@ apis:
   humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
   baseURL: https://<subdomain>.onelogin.com
   tags:
+  - Authentication
+  tags_raw:
   - OAuth
   properties:
   - type: OpenAPI
@@ -119,6 +130,8 @@ apis:
   humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
   baseURL: https://<subdomain>.onelogin.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
