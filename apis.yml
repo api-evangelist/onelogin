@@ -1,9 +1,8 @@
 aid: onelogin
 name: OneLogin
-description: >-
-  OneLogin is an identity and access management platform providing single sign-on (SSO), multi-factor authentication,
-  user provisioning, and a RESTful API for managing users, roles, applications, MFA, branding, connectors, reports, SAML
-  assertions, smart hooks, and Vigilance AI.
+description: OneLogin is an identity and access management platform providing single sign-on (SSO), multi-factor
+  authentication, user provisioning, and a RESTful API for managing users, roles, applications, MFA, branding,
+  connectors, reports, SAML assertions, smart hooks, and Vigilance AI.
 type: Index
 deliveryModel:
   model: unknown
@@ -34,21 +33,23 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onelogin.png
 tags:
-  - Identity
-  - Access Management
-  - Single Sign-On
-  - Multi-Factor Authentication
-  - SAML
-  - Authentication
+- Identity
+- Access Management
+- Single Sign-On
+- Multi-Factor Authentication
+- SAML
+- Authentication
+- Identity Federation
 tags_raw:
-  - Identity
-  - Access Management
-  - Single Sign-On
-  - Multi-Factor Authentication
-  - SAML
-  - OAuth
+- Identity
+- Access Management
+- Single Sign-On
+- Multi-Factor Authentication
+- SAML
+- OAuth
+- Identity Federation
 created: '2025-01-08'
-modified: '2026-05-19'
+modified: '2026-09-16'
 url: https://raw.githubusercontent.com/api-evangelist/onelogin/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:
@@ -155,24 +156,24 @@ apis:
   - type: Authentication
     url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
 common:
-  - type: AgenticAccess
-    url: agentic-access/onelogin-agentic-access.yml
-  - type: DomainSecurity
-    url: security/onelogin-domain-security.yml
-  - type: Authentication
-    url: authentication/onelogin-authentication.yml
-  - type: GitHubOrganization
-    url: https://github.com/onelogin
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/onelogin
-  - type: Website
-    url: https://www.onelogin.com
-  - type: Documentation
-    url: https://developers.onelogin.com
-  - type: DeveloperPortal
-    url: https://developers.onelogin.com
-  - type: Blog
-    url: https://www.onelogin.com/blog/feed
+- type: AgenticAccess
+  url: agentic-access/onelogin-agentic-access.yml
+- type: DomainSecurity
+  url: security/onelogin-domain-security.yml
+- type: Authentication
+  url: authentication/onelogin-authentication.yml
+- type: GitHubOrganization
+  url: https://github.com/onelogin
+- type: LinkedIn
+  url: https://www.linkedin.com/company/onelogin
+- type: Website
+  url: https://www.onelogin.com
+- type: Documentation
+  url: https://developers.onelogin.com
+- type: DeveloperPortal
+  url: https://developers.onelogin.com
+- type: Blog
+  url: https://www.onelogin.com/blog/feed
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
