@@ -87,24 +87,6 @@ apis:
     url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
   - type: Authentication
     url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
-- aid: onelogin:onelogin-oauth-api
-  name: OneLogin OAuth API
-  description: OAuth 2.0 token generation and revocation
-  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
-  baseURL: https://<subdomain>.onelogin.com
-  tags:
-  - Authentication
-  tags_raw:
-  - OAuth
-  properties:
-  - type: OpenAPI
-    url: openapi/onelogin-oauth-api-openapi.yml
-  - type: Documentation
-    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
-  - type: GettingStarted
-    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
-  - type: Authentication
-    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
 - aid: onelogin:onelogin-roles-api
   name: OneLogin Roles API
   description: Role management
@@ -149,6 +131,22 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/onelogin-users-api-openapi.yml
+  - type: Documentation
+    url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  - type: GettingStarted
+    url: https://developers.onelogin.com/api-docs/2/getting-started/working-with-api-credentials
+  - type: Authentication
+    url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
+- aid: onelogin:onelogin-oauth-api
+  name: OneLogin O Auth API
+  description: OAuth 2.0 token generation and revocation
+  humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
+  baseURL: https://<subdomain>.onelogin.com
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/onelogin-oauth-api-openapi.yml
   - type: Documentation
     url: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
   - type: GettingStarted
