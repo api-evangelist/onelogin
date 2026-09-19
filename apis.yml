@@ -35,7 +35,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onelogin.p
 tags:
 - Identity
 - Access Management
-- Single Sign-On
+- SSO
 - Multi-Factor Authentication
 - SAML
 - Authentication
@@ -143,6 +143,8 @@ apis:
   humanURL: https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
   baseURL: https://<subdomain>.onelogin.com
   tags:
+  - Authentication
+  tags_raw:
   - OAuth
   properties:
   - type: OpenAPI
