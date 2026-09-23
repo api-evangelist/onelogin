@@ -1,12 +1,7 @@
 {
   "provider": "onelogin",
   "sources": [
-    "onelogin-apps-api-openapi.yml",
-    "onelogin-mfa-api-openapi.yml",
-    "onelogin-oauth-api-openapi.yml",
-    "onelogin-roles-api-openapi.yml",
-    "onelogin-saml-api-openapi.yml",
-    "onelogin-users-api-openapi.yml"
+    "_original/onelogin-openapi.yml"
   ],
   "outputs": [
     "onelogin-apps-api-openapi.yml",
@@ -16,9 +11,23 @@
     "onelogin-saml-api-openapi.yml",
     "onelogin-users-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "onelogin-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "superseded outputs removed: onelogin-o-auth-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 6 total)"
+  ],
+  "skipped": [
+    "onelogin-apps-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "onelogin-mfa-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "onelogin-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "onelogin-roles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "onelogin-saml-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "onelogin-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
