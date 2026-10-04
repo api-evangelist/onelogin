@@ -1,0 +1,68 @@
+slug: onelogin
+provider: OneLogin
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: MFA
+  spec_file: onelogin-mfa-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: GET /api/1/users/{id}/otp_devices  getOtpDevices  Get available auth factors; POST ... enrollFactor  Enroll
+    auth factor
+  reason: Enrolment and listing of multi-factor authentication factors for users — core identity and access
+    management.
+- tag: Users
+  spec_file: onelogin-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.9
+  evidence: POST /api/1/users/{id}/roles assignUserRole Assign role to user; PUT /api/1/users/{id}/password
+    setUserPassword
+  reason: Operations cover identity account lifecycle (create/update/delete user, set state, set password)
+    and role assignment — joiners-movers-leavers and access administration, i.e. Identity & Access Management,
+    not HR employee records.
+- tag: Roles
+  spec_file: onelogin-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.88
+  evidence: OneLogin REST API for identity and access management ... POST /api/2/roles createRole Create
+    role
+  reason: Operations are full CRUD over access roles within an identity and access management platform;
+    roles here are authorisation constructs, not HR job roles, so Identity & Access Management is the
+    fitting capability.
+- tag: SAML
+  spec_file: onelogin-saml-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: POST /api/1/saml_assertion generateSamlAssertion Generate SAML assertion; POST /api/1/saml_assertion/verify_factor
+    Verify factor for SAML
+  reason: Generating and verifying SAML assertions is federated authentication — squarely IAM/federation.
+    The vendor's business is SSO/MFA, so this realises Identity & Access Management rather than being
+    mere API plumbing.
+- tag: Apps
+  spec_file: onelogin-apps-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: POST /api/2/apps  createApp — "OneLogin is an identity and access management platform providing
+    single sign-on (SSO)"
+  reason: Manages the catalogue of SSO-connected applications to which users gain federated access; part
+    of identity and access management.

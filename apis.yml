@@ -156,6 +156,9 @@ apis:
   - type: Authentication
     url: https://developers.onelogin.com/api-docs/2/oauth20-tokens/generate-tokens-2
 common:
+- type: CapabilityMap
+  url: capabilities/onelogin-capability-edges.yml
+  name: OneLogin Business Capability Map
 - type: AgenticAccess
   url: agentic-access/onelogin-agentic-access.yml
 - type: DomainSecurity
