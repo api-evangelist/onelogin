@@ -1,0 +1,15 @@
+generated: '2026-10-13'
+method: searched
+checked:
+- https://www.onelogin.com/connectors
+marketplace_apps:
+- marketplace: own
+  channel: partner-built
+  app: onelogin
+  url: https://www.onelogin.com/connectors
+  api: https://www.onelogin.com/connectors
+  app_count: null
+  adapter: sweep-identity.py:unreadable
+  listed: 0
+  status: not-machine-readable (HTTP 202; 202 with an empty body to non-browser clients)
+edges: []
