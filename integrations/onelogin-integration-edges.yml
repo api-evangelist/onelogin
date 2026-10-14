@@ -1,6 +1,7 @@
 generated: '2026-10-13'
 method: searched
 checked:
+- clever/integrations/clever-integration-edges.yml
 - https://www.onelogin.com/connectors
 marketplace_apps:
 - marketplace: own
@@ -12,4 +13,24 @@ marketplace_apps:
   adapter: sweep-identity.py:unreadable
   listed: 0
   status: not-machine-readable (HTTP 202; 202 with an empty body to non-browser clients)
-edges: []
+edges:
+- partner_name: Clever (clever-app-gallery)
+  partner: clever
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: clever-app-gallery
+  evidence: https://clever.com/app-gallery
+  mirror_of: clever/integrations/clever-integration-edges.yml
+  apps: []
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: other
+  features:
+  - instant_login
+source:
+- clever/integrations/clever-integration-edges.yml
