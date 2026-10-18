@@ -34,7 +34,7 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/onelogin.png
 tags:
 - Identity
-- Access Management
+- Identity and Access Management
 - SSO
 - Multi-Factor Authentication
 - SAML
