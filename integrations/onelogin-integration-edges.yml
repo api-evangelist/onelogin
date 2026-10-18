@@ -4,6 +4,7 @@ checked:
 - clever/integrations/clever-integration-edges.yml
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://www.onelogin.com/connectors
+- zoom/integrations/zoom-integration-edges.yml
 marketplace_apps:
 - marketplace: own
   channel: partner-built
@@ -59,5 +60,22 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Zoom (own)
+  partner: zoom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.zoom.us/apps/tFh61kesRSGxUFnGYaZoNQ
+  mirror_of: zoom/integrations/zoom-integration-edges.yml
+  apps:
+  - OneLogin
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Zoom app
 source:
 - clever/integrations/clever-integration-edges.yml
