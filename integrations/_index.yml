@@ -94,3 +94,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: onelogin-cisco-own
+  label: Cisco (own)
+  partner: cisco
+  partner_name: Cisco (own)
+  category: BYOD Onboarding & Security, Guest Wi-Fi
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.cisco.com/en-US/apps/380904
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null

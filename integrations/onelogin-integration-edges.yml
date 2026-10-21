@@ -9,6 +9,7 @@ checked:
 - opentofu/integrations/opentofu-integration-edges.yml
 - pulumi/integrations/pulumi-integration-edges.yml
 - terraform/integrations/terraform-integration-edges.yml
+- cisco/integrations/cisco-integration-edges.yml
 marketplace_apps:
 - marketplace: own
   channel: partner-built
@@ -139,5 +140,22 @@ edges:
   badges:
   - Verified publisher (Terraform partner tier)
   - Verified publisher (GitHub domain-verified organization)
+- partner_name: Cisco (own)
+  partner: cisco
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.cisco.com/en-US/apps/380904
+  mirror_of: cisco/integrations/cisco-integration-edges.yml
+  apps:
+  - OneLogin
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: BYOD Onboarding & Security, Guest Wi-Fi
 source:
 - clever/integrations/clever-integration-edges.yml
